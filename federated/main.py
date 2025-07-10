@@ -93,7 +93,7 @@ def federated_loop(node: Node, nrounds: int, epochs: int, saving_path: str, arch
 
 def gather_analytics(saving_path: str, node: Node) -> None:
     """Gather local analytics from the client nodes' local storage back to the server's local storage."""
-    os.makedirs(f'{saving_path}/run/local-analytics/')
+    os.makedirs(f'{saving_path}/run/local-analytics/', exist_ok=True)
     if node.rank != 0:
         df_lr = pd.read_csv(f'{saving_path}/run/train-client{node.rank}/optim_params.csv')
         df_loss = pd.read_csv(f'{saving_path}/run/train-client{node.rank}/training_losses.csv')
@@ -150,9 +150,11 @@ if __name__ == "__main__":
 
     # Create saving folder
     saving_path = 'experiments'
-    os.makedirs(saving_path)
-    os.makedirs(saving_path + '/weights/')
-    os.makedirs(saving_path + '/run/')
+    os.makedirs(saving_path, exist_ok=True)
+    os.makedirs(saving_path + '/weights/', exist_ok=True)
+    os.makedirs(saving_path + '/run/', exist_ok=True)
+
+
 
     # Save config, cfg, hyp and data files
     if node.rank == 0:

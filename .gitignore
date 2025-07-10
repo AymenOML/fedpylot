@@ -149,6 +149,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv-fedpylot/
+.venv-py310/
+.venv-win310/
+
+
 
 # Spyder project settings
 .spyderproject

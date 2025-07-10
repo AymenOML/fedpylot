@@ -27,7 +27,7 @@ case $input in
         mkdir -p "$destination_dir"
         # Use wget to download the file if it does not exist
         if [ ! -f "$destination_path" ]; then
-            wget -O "$destination_path" "$weights_url"
+            curl -L -o "$destination_path" "$weights_url"
             # Check if the download was successful
             if [ $? -eq 0 ]; then
                 echo "Download successful! Weights saved to: $destination_path"
