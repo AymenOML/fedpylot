@@ -23,8 +23,8 @@ module load opencv/4.6.0
 module load mpi4py
 
 # Load pre-existing virtual environment
-source ~/fedpylot-env/bin/activate
-which python  # debug: should return ~/fedpylot-env/bin/python
+#source ~/fedpylot-env/bin/activate
+#which python  # debug: should return ~/fedpylot-env/bin/python
 
 # Prepare directory to backup results
 saving_path=$(pwd)/results/nuimages10/yolov7/fedoptm
