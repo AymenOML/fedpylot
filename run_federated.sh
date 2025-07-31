@@ -14,7 +14,7 @@
 # Check GPU on orchestrating node
 nvidia-smi
 
-module purge
+module --force purge
 module load StdEnv/2020
 module load python/3.9.6 scipy-stack
 module load openmpi/4.0.3
