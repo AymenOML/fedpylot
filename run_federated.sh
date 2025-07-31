@@ -3,8 +3,7 @@
 # Example usage: sbatch run_federated.sh
 
 #SBATCH --nodes=11                       # total number of nodes (1 server and 10 client nodes)
-#SBATCH --gpus-per-node=a100:1
-#SBATCH --ntasks-per-gpu=1               # 1 MPI process is launched per node
+#SBATCH --gpus-per-node=v100l:1          # total of 11 GPUs
 #SBATCH --cpus-per-task=8                # CPU cores per MPI process
 #SBATCH --mem-per-cpu=2G                 # host memory per CPU core
 #SBATCH --time=0-12:00:00                # time (DD-HH:MM:SS)
@@ -24,6 +23,7 @@ module load mpi4py
 
 source ~/fedpylot-env/bin/activate
 python your_main_script.py
+
 
 # Prepare directory to backup results
 saving_path=$(pwd)/results/nuimages10/yolov7/fedoptm
