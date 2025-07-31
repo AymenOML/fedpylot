@@ -14,17 +14,16 @@
 # Check GPU on orchestrating node
 nvidia-smi
 
-# Load modules
 module purge
+module load StdEnv/2020
 module load python/3.9.6 scipy-stack
 module load openmpi/4.0.3
 module load gcc/9.3.0
 module load opencv/4.6.0
 module load mpi4py
 
-# Load pre-existing virtual environment
-#source ~/fedpylot-env/bin/activate
-#which python  # debug: should return ~/fedpylot-env/bin/python
+source ~/fedpylot-env/bin/activate
+python your_main_script.py
 
 # Prepare directory to backup results
 saving_path=$(pwd)/results/nuimages10/yolov7/fedoptm
