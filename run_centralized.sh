@@ -7,7 +7,7 @@
 #SBATCH --ntasks-per-gpu=1               # 1 process is launched
 #SBATCH --cpus-per-task=8                # CPU cores per process
 #SBATCH --mem-per-cpu=2G                 # host memory per CPU core
-#SBATCH --time=3-12:00:00                # time (DD-HH:MM:SS)
+#SBATCH --time=3-72:00:00                # time (DD-HH:MM:SS)
 #SBATCH --mail-user=myemail@gmail.com    # receive mail notifications
 #SBATCH --mail-type=ALL
 
